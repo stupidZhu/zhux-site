@@ -1,3 +1,4 @@
+@import "docs/util-doc/style";
 .base-item {
   position: fixed;
   top: 0;
@@ -9,10 +10,10 @@
 
 .my-dialog {
   position: fixed;
-  top: 300px;
-  left: calc(50% - 250px);
+  top: vh(300);
+  left: calc(50% - vw(250));
   width: vw(500);
-  min-height: 300px;
+  min-height: vh(300);
   background-color: #eee;
   box-shadow: 5px 5px 5px rgba(#000, 0.1);
 
@@ -21,29 +22,27 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 40px;
+    height: vh(40);
     cursor: move;
   }
   .dialog-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 40px;
-    padding: 0 20px;
+    height: vh(40);
+    padding: 0 vw(20);
     background-color: pink;
+    @include flex($j: space-between);
     > span {
       &:nth-child(2) {
         position: relative;
         z-index: 1;
         cursor: pointer;
         &:hover {
-          color: rgb(255, 103, 103);
+          color: $theme-red;
         }
       }
     }
   }
   .dialog-content {
-    padding: 20px;
+    padding: vw(20);
   }
 }
 

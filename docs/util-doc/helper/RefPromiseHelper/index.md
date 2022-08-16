@@ -1,8 +1,8 @@
 ---
-title: RefPromiseUtil
+title: RefPromiseHelper
 ---
 
-# RefPromiseUtil
+# RefPromiseHelper
 
 <code src="./demos/base.tsx"></code>
 

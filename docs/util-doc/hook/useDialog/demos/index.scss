@@ -1,3 +1,4 @@
+@import "docs/util-doc/style";
 .use-dialog {
   position: fixed;
   top: 0;
@@ -11,9 +12,9 @@
   &.dialog-a {
   }
   &.dialog-b {
-    background-color: #4da6ff;
+    background-color: $theme-light-blue;
     .move-field {
-      background-color: #94f4af;
+      background-color: $theme-light-green;
     }
   }
   .move-field {

@@ -1,8 +1,8 @@
 ---
-title: StorageUtil
+title: StorageHelper
 ---
 
-# StorageUtil
+# StorageHelper
 
 <code src="./demos/base.tsx"></code>
 
@@ -27,4 +27,4 @@ title: StorageUtil
 
 - removeItem 为 localStorage 原生方法，不会自动拼上 prefix
 
-- setItem 的 \_expire 可以传 dayjs.duration 支持的[对象参数](https://day.js.org/docs/zh-CN/durations/creating#%E6%94%AF%E6%8C%81%E7%9A%84%E5%8D%95%E4%BD%8D%E5%88%97%E8%A1%A8)，或者一个数值（毫秒为单位，1000 代表 1s 后失效）
+- setItem 的 \_expire 可以传 dayjs.duration 支持的[对象参数](https://day.js.org/docs/zh-CN/durations/creating)，或者一个数值（毫秒为单位，1000 代表 1s 后失效）

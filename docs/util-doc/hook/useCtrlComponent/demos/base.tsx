@@ -3,15 +3,16 @@
  * desc: ImgPicker 内部使用了 useCtrlComponent，详见 ImgPicker。因为 useCtrlComponent 内部使用了 in 操作符，请直接传入 props 而不要解构。使用该 hook 的组件可以与 antd-Form 组件搭配使用。
  */
 import React, { useState } from "react"
+import { resourceUri } from "../../../common/var"
 import ImgPicker from "./ImgPicker"
 import "./index.scss"
 
 export const imgList = [
-  "http://43.142.32.143:7777/zhux-site/logoBlue.png",
-  "http://43.142.32.143:7777/zhux-site/logoGreen.png",
-  "http://43.142.32.143:7777/zhux-site/logoRed.png",
-  "http://43.142.32.143:7777/zhux-site/logoYellow.png",
-]
+  "/zhux-site/logoBlue.png",
+  "/zhux-site/logoGreen.png",
+  "/zhux-site/logoRed.png",
+  "/zhux-site/logoYellow.png",
+].map(item => `${resourceUri}${item}`)
 
 const BaseDemo = () => {
   const [value, onChange] = useState<string>()
@@ -25,13 +26,8 @@ const BaseDemo = () => {
       </div>
       <div>
         <span>非受控组件示例：</span>
-        <ImgPicker
-          defaultValue="http://43.142.32.143:7777/zhux-site/logoGreen.png"
-          onChange={console.log}
-          imgList={imgList}
-        />
+        <ImgPicker defaultValue={`${resourceUri}/zhux-site/logoGreen.png`} onChange={console.log} imgList={imgList} />
       </div>
-      <hr />
     </div>
   )
 }

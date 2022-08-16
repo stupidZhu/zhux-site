@@ -4,6 +4,7 @@
  */
 import React from "react"
 import { useCustomFields } from "zhux-utils-react"
+import { imgList } from "../../useCtrlComponent/demos/base"
 import ImgPicker from "../../useCtrlComponent/demos/ImgPicker"
 
 const CustomDemo = () => {
@@ -34,16 +35,7 @@ const CustomDemo = () => {
             )}
             {item.type === "img" && (
               <div className="img-picker-wrapper">
-                <ImgPicker
-                  value={item.value}
-                  onChange={e => changeField("value", index, e)}
-                  imgList={[
-                    "http://43.142.32.143:7777/zhux-site/logoBlue.png",
-                    "http://43.142.32.143:7777/zhux-site/logoGreen.png",
-                    "http://43.142.32.143:7777/zhux-site/logoRed.png",
-                    "http://43.142.32.143:7777/zhux-site/logoYellow.png",
-                  ]}
-                />
+                <ImgPicker value={item.value} onChange={e => changeField("value", index, e)} imgList={imgList} />
               </div>
             )}
             <button onClick={() => changeField("del", index)}>删除</button>
