@@ -14,14 +14,15 @@ title: useScrollUtil
 
 ```ts
 // props 类型
+type ScrollRef = { current: ReturnType<typeof useScrollUtil> | undefined }
 interface ScrollWrapperProps extends ClassStyle, Omit<UseScrollUtilProps, "scrollDom"> {
-  scrollRef?: { current: ReturnType<typeof useScrollUtil> }
+  scrollRef?: ScrollRef
 }
 ```
 
 可以通过 scrollRef 获取 useScrollUtil result 的所有方法
 
-## props
+## props (UseScrollUtilProps)
 
 | 参数           | 说明                 | 类型                                                                               | 默认值 |
 | :------------- | :------------------- | :--------------------------------------------------------------------------------- | :----- |
@@ -45,8 +46,6 @@ interface ScrollWrapperProps extends ClassStyle, Omit<UseScrollUtilProps, "scrol
 
 ## types
 
-| 类型       | 说明                  | 类型                                                                                                                              |
-| :--------- | :-------------------- | :-------------------------------------------------------------------------------------------------------------------------------- |
-| IRef\<T\>  | 获取 T 的函数或者 ref | `(() => T) \| React.MutableRefObject<T>`                                                                                          |
-| ScrollInfo | scroll 容器信息       | `{ offsetWidth: number; offsetHeight: number; scrollHeight: number; scrollLeft: number; scrollTop: number; scrollWidth: number }` |
-| ClassStyle | 公共组件共同样式类型  | `{ className?: string; style?: CSSProperties }`                                                                                   |
+| 类型       | 说明            | 类型                                                                                                                              |
+| :--------- | :-------------- | :-------------------------------------------------------------------------------------------------------------------------------- |
+| ScrollInfo | scroll 容器信息 | `{ offsetWidth: number; offsetHeight: number; scrollHeight: number; scrollLeft: number; scrollTop: number; scrollWidth: number }` |

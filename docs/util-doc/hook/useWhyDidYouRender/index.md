@@ -1,5 +1,6 @@
 ---
 title: useWhyDidYouRender
+hide: true
 ---
 
 # useWhyDidYouRender

@@ -1,10 +1,12 @@
 ---
-title: useWatchEffect
+order: 100
 ---
 
 # useWatchEffect
 
-<code src="./demos/base.tsx"></code>
+<code src="./demos/watch.tsx"></code>
+
+<code src="./demos/watchRef.tsx"></code>
 
 ## WARNING !!!
 
@@ -12,7 +14,8 @@ title: useWatchEffect
 
 ## props
 
-| 参数 | 说明                          | 类型             | 默认值 |
-| :--- | :---------------------------- | :--------------- | :----- |
-| cb   | 和 useEffect 的第一个参数一致 | `EffectCallback` | 必填   |
-| dep  | 需要监听的值                  | `any`            | 必填   |
+| 参数                    | 说明                          | 类型                                           | 默认值 |
+| :---------------------- | :---------------------------- | :--------------------------------------------- | :----- |
+| cb                      | 和 useEffect 的第一个参数一致 | `EffectCallback`                               | 必填   |
+| dep (useWatchEffect)    | 需要监听的值                  | `any`                                          | 必填   |
+| dep (useWatchRefEffect) | 需要监听的值                  | [`IRef`](/util-doc/type#来自-zhux-utils-react) | 必填   |

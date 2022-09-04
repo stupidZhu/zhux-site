@@ -62,12 +62,8 @@ const ProviderDemo = () => {
               return [...show]
             })
           }}
-          onMove={console.log}
-          onResize={console.log}
-          onMoveStart={console.log}
-          onMoveEnd={console.log}
-          onResizeStart={console.log}
-          onResizeEnd={console.log}
+          moveCb={console.log}
+          resizeCb={console.log}
         >
           当 useDialog 传入 onMove/onResize 回调函数时，在弹窗 Move/Resize 时会触发相关回调函数。尝试 Move/Resize
           此弹窗，查看控制台。

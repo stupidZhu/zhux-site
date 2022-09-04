@@ -7,6 +7,7 @@ hero:
       link: /util-doc
     - text: Blog
       link: /blog
+footer: Open-source MIT Licensed | Copyright © 2022-present<br />Powered by [dumi](https://d.umijs.org)
 ---
 
 ## 📦 安装

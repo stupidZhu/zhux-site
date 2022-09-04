@@ -35,7 +35,7 @@
     "dayjs": "^1.11.4",
     "lodash": "^4.17.21",
     "react-transition-group": "^4.4.5",
-    "zhux-utils": "^0.1.16",
-    "zhux-utils-react": "^0.0.2"
+    "zhux-utils": "^0.1.18",
+    "zhux-utils-react": "^0.0.3"
   }
 }

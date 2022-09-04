@@ -1,17 +1,17 @@
 /**
- * title : useWatchEffect
- * desc : 这个 hook 会在依赖发生改变的时候触发传入的回调，回调的第一个参数是依赖的新值，第二个参数的改变前的值
+ * title : useWatchRefEffect
+ * desc : 与 useWatchEffect 的区别是它的依赖值的类型为 `IRef`
  */
 import { useBoolean } from "ahooks"
 import React from "react"
-import { useWatchEffect } from "zhux-utils-react"
+import { useWatchRefEffect } from "zhux-utils-react"
 
 let boolean = false
 
 const BaseDemo = () => {
   const [bool, { toggle }] = useBoolean(false)
 
-  useWatchEffect(
+  useWatchRefEffect(
     (val, prevVal) => {
       console.log(val, prevVal, "bool")
       return () => {
@@ -22,7 +22,7 @@ const BaseDemo = () => {
   )
 
   // 以下为错误示范
-  useWatchEffect(
+  useWatchRefEffect(
     (val, prevVal) => {
       console.log(val, prevVal, "boolean")
     },

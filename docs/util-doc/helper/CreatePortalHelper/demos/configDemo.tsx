@@ -19,25 +19,31 @@ const ConfigDemo = () => {
     <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
       <button
         onClick={() => {
-          const key = createPortalHelper.add(
-            <MyDialog title="Dialog!" removeDelay={1000}>
-              <span>如果不指定key，则会随机生成一个并返回。这里设置了 maxCount = 3，removeDelay = 1000</span>
-            </MyDialog>
-          )
-          keys.current.push(key)
+          createPortalHelper
+            .add(
+              <MyDialog title="Dialog!" removeDelay={1000}>
+                <span>如果不指定key，则会随机生成一个并返回。这里设置了 maxCount = 3，removeDelay = 1000</span>
+              </MyDialog>
+            )
+            .then(({ key, flag }) => {
+              key && keys.current.push(key)
+            })
         }}
       >
         打开一个 dialog
       </button>
       <button
         onClick={() => {
-          const key = createPortalHelper.add(
-            <MyDialog title="Dialog!" removeDelay={1000}>
-              <span>如果 dialog 数量超过 maxCount，会自动关闭最先生成的 dialog（注意这并不会移除你 keys 里面的值）</span>
-            </MyDialog>,
-            { replace: true }
-          )
-          keys.current.push(key)
+          createPortalHelper
+            .add(
+              <MyDialog title="Dialog!" removeDelay={1000}>
+                <span>如果 dialog 数量超过 maxCount，会自动关闭最先生成的 dialog（注意这并不会移除你 keys 里面的值）</span>
+              </MyDialog>,
+              { replace: true }
+            )
+            .then(({ key, flag }) => {
+              key && keys.current.push(key)
+            })
         }}
       >
         replace 为 true 的情况

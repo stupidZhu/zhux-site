@@ -35,9 +35,9 @@ const BaseDemo = () => {
           <span>set方式1:</span>
           <input type="text" value={customStorage.str} onChange={e => setCustomStorage({ str: e.target.value })} />
           <button
-            onClick={() =>
+            onClick={() => {
               setCustomStorage("obj", customStorage.obj.hello === "world" ? { hello: "storage" } : { hello: "world" })
-            }
+            }}
           >
             set方式2
           </button>

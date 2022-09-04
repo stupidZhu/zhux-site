@@ -1,5 +1,5 @@
 ---
-title: useCtrlComponent
+order: 700
 ---
 
 # useCtrlComponent

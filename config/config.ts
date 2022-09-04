@@ -10,5 +10,6 @@ export default defineConfig({
     { title: "Blog", path: "/blog" },
     { title: "GitHub", path: "https://github.com/stupidZhu" },
   ],
+  styles: ["http://file.zhux.cc/zhux-site/common.css"],
   // more config: https://d.umijs.org/config
 })

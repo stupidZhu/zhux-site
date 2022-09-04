@@ -1,46 +1,17 @@
 import React, { useRef } from "react"
 import { useDialog } from "zhux-utils-react"
-import { DialogMoveFunc, DialogResizeFunc, IPosition } from "zhux-utils-react/es/hook/useDialog/useDialog"
+import { DialogMoveCb, DialogResizeCb, IPosition } from "zhux-utils-react/es/hook/useDialog/useDialog"
 import { WithChildren } from "zhux-utils-react/es/type"
 import "./index.scss"
 
 export const MyDialogA: React.FC<
-  {
-    close: () => void
-    position?: IPosition
-    onMove?: DialogMoveFunc
-    onMoveStart?: DialogMoveFunc
-    onMoveEnd?: DialogMoveFunc
-    onResize?: DialogResizeFunc
-    onResizeStart?: DialogResizeFunc
-    onResizeEnd?: DialogResizeFunc
-  } & WithChildren
-> = ({
-  close,
-  position = { left: 0, top: 0 },
-  onMove,
-  onMoveStart,
-  onMoveEnd,
-  onResize,
-  onResizeStart,
-  onResizeEnd,
-  children,
-}) => {
+  { close: () => void; position?: IPosition; moveCb?: DialogMoveCb; resizeCb?: DialogResizeCb } & WithChildren
+> = ({ close, position = { left: 0, top: 0 }, moveCb, resizeCb, children }) => {
   const dialogRef = useRef<HTMLDivElement>(null)
   const moveFieldRef = useRef<HTMLDivElement>(null)
   const resizeFieldRef = useRef<HTMLDivElement>(null)
 
-  const stateObj = useDialog({
-    dialogRef,
-    moveFieldRef,
-    resizeFieldRef,
-    onMove,
-    onMoveStart,
-    onMoveEnd,
-    onResize,
-    onResizeStart,
-    onResizeEnd,
-  })
+  const stateObj = useDialog({ dialogRef, moveFieldRef, resizeFieldRef, moveCb, resizeCb })
 
   return (
     <div className="use-dialog dialog-a" ref={dialogRef} style={{ ...position }}>

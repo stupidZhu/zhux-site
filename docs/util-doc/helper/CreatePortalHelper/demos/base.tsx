@@ -5,7 +5,7 @@ import React from "react"
 import { CreatePortalHelper } from "zhux-utils-react"
 import "./index.scss"
 
-const createPortalHelper = new CreatePortalHelper()
+const createPortalHelper = new CreatePortalHelper({ renderType: "render" })
 
 const BaseDemo = () => {
   return (
